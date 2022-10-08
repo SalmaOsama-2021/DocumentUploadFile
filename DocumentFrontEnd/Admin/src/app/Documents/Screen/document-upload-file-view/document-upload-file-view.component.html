@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="offset-md-10 col-md-2">
+      <button type="button" class="btn btn-primary btn-sm" (click)="AddData()">New Document</button>
+    </div>
+  </div>
+<section class="Documents">
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Action</th>
+
+          <th scope="col">Document Title</th>
+          <th scope="col">Document created</th>
+          <th scope="col">Document Date</th>
+          <th scope="col">Creatation Due_date</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let Document of  this.DataList">
+            <td><button type="button" class="btn btn-primary" (click)="UpdateData(Document.iD)">Edit</button>
+                <button type="button" class="btn btn-primary" (click)="DeleteData(Document.iD)">Delete</button></td>
+          
+          <td>{{Document.name}}</td>
+          <td>{{Document.created |date:"MM/dd/yy"}}</td>
+          <td>{{Document.date |date:"MM/dd/yy"}}</td>
+          <td>{{Document.due_date |date:"MM/dd/yy"}}</td>
+         
+          
+        </tr>
+      </tbody>
+    </table>
+  
+  </section>
